@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <link href="img/fevicon.png" rel="icon" type="image/png">
+  <title>Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="form.css" media="screen" />
+  
+</head>
+
+<body>
+
+<script type="text/javascript">
+function ValidateContactForm()
+{
+    var email = document.ContactForm.Email;
+    var pwd = document.ContactForm.Password;
+    if (email.value == "")
+    {
+        window.alert("Please enter your email!!");
+        email.focus();
+        return false;
+    }
+    
+    if (pwd.value == "")
+    {
+        window.alert("Please enter password!!");
+        pwd.focus();
+        return false;
+    }
+    else
+   {
+    alert('Form Succesfully Submitted!!!');
+    window.location.reload()
+    return true;
+   }
+}
+</script>   
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+	  <div class="logo">
+      <h1><a class="navbar-brand" href="Home.html">Form</a></h1>
+	  </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Sign In.html">Sign In</a></li>
+        <li><a href="Register.html">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    
+<div class="row" style="margin-top:150px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    	
+			<form name="ContactForm" onsubmit="return ValidateContactForm();">
+				<h2>Please Sign In</h2>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    <input type="text" id="eml" name="Email" class="form-control input-lg" placeholder="Email Address">
+					<span style="display:none" id="mes">Please enter Email</span>
+				</div>
+				<div class="form-group">
+                    <input type="password" id="psd" name="Password" class="form-control input-lg" placeholder="Password">
+					<span style="display:none" id="mes1">Please enter Password</span>
+				</div>
+				<span class="button-checkbox">
+					<button type="button" class="btn" data-color="info"><input type="checkbox" name="remember_me" id="remember_me"  >Remember Me</button>
+                    
+					<a onclick=" window.open('reset.html')" class="btn btn-link pull-right">Forgot Password?</a>
+				</span>
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-lg btn-success btn-block"  value="Log In" >
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<a href="Register.html" class="btn btn-lg btn-primary btn-block">Register</a>
+					</div>
+				</div>
+			</form>
+		
+	</div>
+</div>
+
+</div>  
+<div class="footer">
+  <div class="container text-center">
+    <div class="fnav">
+      <p>Copyright &copy; 2017. Designed by <a href="Home.html">Satya</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

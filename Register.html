@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <link href="img/fevicon.png" rel="icon" type="image/png">
+  <title>Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="form.css" media="screen" />
+  
+</head>
+
+<body>
+
+<script type="text/javascript">
+/*function displayMes(form){
+var v1= document.getElementById("fn").value;
+var v2= document.getElementById("ln").value;
+var v3= document.getElementById("em").value;
+var v4 = document.getElementById("cn").value;
+var v5 = document.getElementById("pn").value;
+var v6 = document.getElementById("pw").value;
+var v7 = document.getElementById("cpw").value;
+var v8 = document.getElementById("dob").value;
+
+
+if (v1==""){
+document.getElementById("mes").style="";
+document.getElementById("mes").className="classEx";
+}
+if (v2==""){
+document.getElementById("mes1").style="";
+document.getElementById("mes1").className="classEx";
+}
+if (v3==""){
+document.getElementById("mes2").style="";
+document.getElementById("mes2").className="classEx";
+}
+if (v4 == "") {
+document.getElementById("mes3").style="";
+document.getElementById("mes3").className="classEx";
+}
+
+if ( ( form.gender[0].checked == false ) && ( form.gender[1].checked == false ) ) 
+{
+document.getElementById("mes4").style="";
+document.getElementById("mes4").className="classEx";
+
+}
+if (v5 == "") {
+document.getElementById("mes5").style="";
+document.getElementById("mes5").className="classEx";
+}
+if (v6 == "") {
+document.getElementById("mes6").style="";
+document.getElementById("mes6").className="classEx";
+}
+if (v7 == "") {
+document.getElementById("mes7").style="";
+document.getElementById("mes7").className="classEx";
+}
+if (v8 == "") {
+document.getElementById("mes8").style="";
+document.getElementById("mes8").className="classEx";
+}
+
+}*/
+function ValidateContactForm()
+{
+    var fname = document.ContactForm.FirstName;
+    var lname = document.ContactForm.LastName;
+	var eml = document.ContactForm.Email;
+    var cntry = document.ContactForm.Country;
+	var gndr = document.ContactForm.Gender;
+	var pnmbr = document.ContactForm.PhoneNumber;
+	var pwd = document.ContactForm.Password;
+    var cpwd = document.ContactForm.ConfirmPassword;
+	var dob = document.ContactForm.Dob;
+	
+    if (fname.value == "")
+    {
+        window.alert("Please enter your First Name!!");
+        fname.focus();
+        return false;
+    }
+    
+    if (lname.value == "")
+    {
+        window.alert("Please enter Last Name!!");
+        lname.focus();
+        return false;
+    }
+	if (eml.value == "")
+    {
+        window.alert("Please enter your Email!!");
+        eml.focus();
+        return false;
+    }
+	if (cntry.value == "Default")
+    {
+        window.alert("Please select Country!!");
+        cntry.focus();
+        return false;
+    }
+	if ( ( gndr[0].checked == false ) && (gndr[1].checked == false ))
+    {
+        window.alert("Please select Gender!!");
+        gndr.focus();
+        return false;
+    }
+	    if (pnmbr.value == "")
+    {
+        window.alert("Please enter your Phone Number!!");
+        pnmbr.focus();
+        return false;
+    }
+	    if (pwd.value == "")
+    {
+        window.alert("Please enter your Password!!");
+        pwd.focus();
+        return false;
+    }
+	    if (cpwd.value == "")
+    {
+        window.alert("Please confirm your Password!!");
+        cpwd.focus();
+        return false;
+    }
+	if (dob.value == "")
+    {
+        window.alert("Please enter your Date of Birth!!");
+        dob.focus();
+        return false;
+    }
+	
+    else
+   {
+    alert('Form Succesfully Submitted!!!');
+    window.location.reload()
+    return true;
+   }
+}
+</script>  
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+	  <div class="logo">
+      <h1><a class="navbar-brand" href="Home.html">Form</a></h1>
+	  </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+	  
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Sign In.html">Sign In</a></li>
+        <li><a href="Register.html">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<div class="container">
+    
+<div class="row" style="margin-top:150px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    	
+			<form name="ContactForm" onsubmit="return ValidateContactForm();">
+                <h2>Register</h2>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    <input type="text" id="fstname" name="FirstName" class="form-control input-lg" placeholder="First name">
+					<span style="display:none" id="mes">!Please enter First Name</span>
+				</div>
+				<div class="form-group">
+                    <input type="text" id="lstname" name="LastName" class="form-control input-lg" placeholder="Last Name">
+					<span style="display:none" id="mes1">!Please enter Last Name</span>
+				</div>
+				<div class="form-group">
+                    <input type="text" id="emal" name="Email" class="form-control input-lg" placeholder="Email Address">
+					<span style="display:none" id="mes2">!Please enter Email</span>
+				</div>
+				<div class="form-group">
+                    <select id="contry" name="Country" class="form-control input-lg">
+                       <option selected="" value="Default" >Select Country</option>
+                       <option value="IN">India</option>
+                       <option value="CH">China</option>
+                       <option value="PK">Pakistan</option>
+                       <option value="ML">Malasia</option>
+                       <option value="IT">Italy</option>
+                    </select>
+				    <span style="display:none" id="mes3">!Please select Country</span><br>
+                 </div>
+                <div class="form-group" >				 
+					<input type="radio" id="mlsex" name="Gender" value="male"  class="big"> <label for="male">Male</label>
+                    <input type="radio" id="flsex" name="Gender" value="female" class="big"> <label for="female">Female</label>
+				    <span style="display:none" id="mes4">!Please Select Gender</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="phnmbr" name="PhoneNumber" class="form-control input-lg" placeholder="Phone Number">
+					<span style="display:none" id="mes5">!Please enter Phone Number</span>
+				</div>
+				<div class="form-group">
+                    <input type="Password" id="paswd" name="Password" class="form-control input-lg" placeholder="Password">
+					<span style="display:none" id="mes6">!Please enter Password</span>
+				</div>
+				<div class="form-group">
+                    <input type="Password" id="cnpswd" name="ConfirmPassword" class="form-control input-lg" placeholder="Confirm Password">
+					<span style="display:none" id="mes7">!Please Confirm Password</span>
+				</div>
+				<div class="form-group">
+				<label for="dob">Date of Birth</label>
+                    <input type="text" id="dtob" name="Dob" class="form-control input-lg" placeholder="MM/DD/YYYY">
+					<span style="display:none" id="mes8">!Please enter date of Birth</span>
+				</div>
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Create Account"><br><br><br><br>
+					</div>
+				</div>
+
+
+            </form> 
+		
+	</div>
+</div>
+
+</div> 
+<div class="footer">
+  <div class="container text-center">
+    <div class="fnav">
+      <p>Copyright &copy; 2017. Designed by <a href="Home.html">Satya</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html> 
